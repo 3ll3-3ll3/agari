@@ -3,8 +3,9 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 // https://vite.dev/config/
 export default defineConfig(() => ({
-  // Use root base path for custom domain (agari.org)
-  base: "/",
+  // Use the fork's GitHub Pages project path only in GitHub Actions builds.
+  // Keep the original root path for local development and other hosting.
+  base: process.env.GITHUB_ACTIONS === "true" && process.env.GITHUB_REPOSITORY === "3ll3-3ll3/agari" ? "/agari/" : "/",
   plugins: [svelte()],
   build: {
     target: "esnext",

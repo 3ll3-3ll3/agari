@@ -3,7 +3,7 @@
  * All translation keys are defined here for type safety
  */
 
-export type Locale = "en" | "ja";
+export type Locale = "en" | "ja" | "zh-CN";
 
 export interface Translations {
   // Header
